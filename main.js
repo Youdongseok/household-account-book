@@ -207,15 +207,15 @@ const render = (filteredList = null) => {
                     </p>
                     <div class="collapse" id="${list[i].id}">
                         <div class="card card-body">
-                        <div class="update-btn">
+                            <div class="update-btn">
                         <input type="radio" name="inout-${list[i].id}" value="get" />입금
                         <input type="radio" name="inout-${list[i].id}" value="out" />출금
                         <input type="text" id="${list[i].changeText}" placeholder="${list[i].text}" value=""/>
                         <input type="number" id="${list[i].changeMoney}" placeholder=" ${list[i].money}원"/>
                         <button id="save-btn" onclick="updateTask('${list[i].id}')">저장</button>
                         <button id="cancel-btn" onclick="render()">취소</button>
+                            </div>
                         </div>
-                    </div>
                     </div>
                     <button id="del-btn-${list[i].id}" onclick="deleteTask('${list[i].id}')">삭제</button>
                 </div>
