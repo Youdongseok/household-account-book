@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가계부</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+    <h1 class="title">household account book</h1>
+    <sectoin class="input-area">
+      <div class="user-input row">
+        <div class="input-up col">
+          <input class="input-itme" type="text" id="user-text"required>
+          <label>입출금 내역</label>
+          <span></span>
+        </div>
+        <div class="input-up col">
+        <input class="input-itme" type="text" id="user-money" required>
+        <label>입출금 금액</label>
+        <span></span>
+        </div>
+     </div>
+     <div class="row">
+      <div class="input-up col">
+        <input class="input-itme" type="date" id="user-date" required>
+        <label>날짜 선택</label>
+        <span></span>
+        </div>
+        <div class="input-up col">
+          <input class="input-itme" type="time" id="user-time" required>
+          <label>시간 선택</label>
+          <span></span>
+          </div>
+     </div>
+    
+      
+    
+      
+      <div class="inout-btn">
+      <button id="in-btn">입금</button>
+      <button id="out-btn">출금</button>
+      </div>
+      
+    </sectoin>
+    <section  class="sum-area">
+      <div id="about-Sum">
+          합계 : | 총 수익 : | 총 지출
+      </div>
+      <div>
+          <button id="sum-btn">계산하기</button>
+      </div>       
+  </section>
+    
+
+    
+
+    <section class="task-area">
+<div class="tab-items">
+    <div class="tab">
+        <div id="under-line"></div>
+        <div id="allThing">모두</div>
+        <div id="getThing">입금</div>
+        <div id="outThing">출금</div>
+        <button id="chooseDate" onclick="dateFilter()">날짜선택</button> 
+    </div>
+    
+  </div>    
+           <div id="wrapper" style="display: none;">
+            <!--class를get하려면nodeList를 전달해서 모호해지지 않게 해야함-->
+            <header>
+                
+                  
+        <div class="icons">
+          <span id="prev" class="material-symbols-rounded">chevron_left</span>
+          <p class="current-date"></p>
+          <span id="next" class="material-symbols-rounded">chevron_right</span>
+        </div>
+              </header>
+              <div class="calendar">
+                <ul class="weeks">
+                  <li>Sun</li>
+                  <li>Mon</li>
+                  <li>Tue</li>
+                  <li>Wed</li>
+                  <li>Thu</li>
+                  <li>Fri</li>
+                  <li>Sat</li>
+                </ul>
+                <ul class="days">
+
+                </ul>
+              </div>
+            </div>
+
+   
+    
+
+    <div id="task-board">
+    
+    </div>
+    </section>
+    
+    </div>  
+    
+
+      
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>

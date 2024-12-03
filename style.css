@@ -1,0 +1,406 @@
+body{
+    margin: 0;
+    background-image: url("backimg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    background-color: white;
+    min-height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.title{
+  margin-bottom: 5px;
+  border-bottom: 1px solid lightgray;;
+}
+
+.input-area input{
+  margin-right: 1px;
+}
+.input-area button{
+  margin-right: 1px;
+}
+
+.tab{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+}
+
+.tab div{
+    padding: 1em;
+    cursor: pointer;
+}
+
+.task-area{
+    border: 1px solid lightgray;
+}
+
+
+#under-line{
+    height: 4px;
+    background-color: pink;
+    
+    position: absolute;
+    width: 80px;
+    left: 0px;
+    top:52px;
+    padding: 0px;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+}
+
+.green{
+    color: green;
+    border-bottom: 1px solid lightgray;
+}
+.red{
+    color: red;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.update-btn{
+    display: flex;
+    
+}
+
+
+
+.tab-items{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.task div{
+  padding: 0.5em;
+}
+
+.sum-area{
+  display: flex;
+  justify-content: space-between;
+ margin-bottom: 5px;
+ border-bottom: 1px solid lightgray;
+ border-top: 1px solid lightgray;
+ padding-top: 0.5em;
+ padding-bottom: 0.5em;
+}
+#about-Sum{
+  padding: 0.5em;
+
+}
+#chooseDate{
+    padding: 1em;
+    border: none;
+    background-color: white;
+
+}
+
+.inout-btn{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+.inout-btn button{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+ 
+  border-color: lightgray;
+}
+
+/* 달력 */
+.wrapper{
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.wrapper header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons{
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid lightgray;
+}
+header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: -10px;
+}
+header .icons span:hover{
+  background: #f2f2f2;
+}
+header .current-date{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar{
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days{
+  margin-bottom: 20px;
+}
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+  background: #9B59B6;
+}
+.days li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+
+.user-input{
+  display: flex;
+  justify-content: center;
+}
+
+.input-up {
+  position: relative;
+  
+  margin-left: 5px;
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+
+.input-itme {
+  font-size: 15px;
+  color: #222222;
+  width: 300px;
+  border: none;
+  border-bottom: solid #aaaaaa 1px;
+  padding-bottom: 10px;
+ 
+  position: relative;
+  background: none;
+  z-index: 5;
+}
+
+input::placeholder { color: #aaaaaa; }
+input:focus { outline: none; }
+
+.input-area span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0%;  /* right로만 바꿔주면 오 - 왼 */
+  background-color: #666;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+
+label {
+  position: absolute;
+  color: #aaa;
+  left: 10px;
+  font-size: 20px;
+  bottom: 8px;
+  transition: all .2s;
+}
+
+input:focus ~ label, input:valid ~ label {
+  font-size: 16px;
+  bottom: 40px;
+  color: #666;
+  font-weight: bold;
+}
+
+input:focus ~ span, input:valid ~ span {
+  width: 100%;
+}
+
+
+input[type="date"] {
+  color: transparent; /* 기본적으로 값 숨김 */
+}
+
+input[type="date"].has-value {
+  color: inherit; /* 값이 있으면 기본 색상으로 표시 */
+}
+input[type="time"] {
+  color: transparent; /* 기본적으로 값 숨김 */
+}
+
+input[type="time"].has-value {
+  color: inherit; /* 값이 있으면 기본 색상으로 표시 */
+}
+input[type="time"]:focus{
+  color: inherit;
+}
+
+.inout-btn button {
+  width: 120px; /* 버튼 크기를 조금 더 크게 */
+  margin: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px; /* 버튼 모서리를 둥글게 */
+  background-color: #F7CAC9; /* 부드러운 핑크 톤 */
+  color: #ffffff; /* 흰색 글자 */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 버튼에 살짝 그림자 */
+}
+
+/* 버튼 호버 효과 */
+.inout-btn button:hover {
+  background-color: #E68A94; /* 어두운 핑크 톤으로 변화 */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* 더 강조된 그림자 */
+  transform: translateY(-2px); /* 살짝 위로 올라가는 효과 */
+}
+
+/* 버튼 클릭 효과 */
+.inout-btn button:active {
+  background-color: #D16B78; /* 더 어두운 핑크 */
+  transform: translateY(0); /* 클릭 시 원래 위치 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 축소 */
+}
+
+
+
+
+#sum-btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px; /* 버튼 모서리를 둥글게 */
+  background-color: #87CEFA; /* 하늘색 */
+  color: #ffffff; /* 흰색 글자 */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 버튼에 살짝 그림자 */
+}
+
+
+
+#sum-btn:hover {
+  background-color: #4682B4; /* 어두운 하늘색 */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* 더 강조된 그림자 */
+  transform: translateY(-2px); /* 살짝 위로 올라가는 효과 */
+}
+
+/* 버튼 클릭 효과 */
+#sum-btn:active {
+  background-color: #5B9BD5; /* 조금 더 진한 하늘색 */
+  transform: translateY(0); /* 클릭 시 원래 위치 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 클릭 시 그림자 축소 */
+}
+
+[id^="del-btn-"],#cancel-btn{
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px; /* 버튼 모서리 둥글게 */
+  background-color: #F5D8B1; /* 부드러운 베이지색 */
+  color: #ffffff; /* 흰색 글자 */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 버튼에 살짝 그림자 */
+}
+
+/* 버튼 호버 효과 */
+[id^="del-btn-"]:hover,#cancel-btn:hover{
+  background-color: #E1C0A3; /* 약간 더 어두운 베이지색 */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* 그림자 강조 */
+  transform: translateY(-2px); /* 위로 올라가는 효과 */
+}
+
+/* 버튼 클릭 효과 */
+[id^="del-btn-"]:active,#cancel-btn:active{
+  background-color: #D1A986; /* 더 진한 베이지색 */
+  transform: translateY(0); /* 클릭 시 원위치 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 축소 */
+}
+
+
+
+[id^="change-btn-"],#save-btn{
+  font-size: 16px;
+  padding: 12px 24px; /* 버튼 크기를 약간 키움 */
+  border: none;
+  border-radius: 25px; /* 버튼 모서리 둥글게 유지 */
+  background-color: #E08A50; /* 진한 오렌지 베이지색 */
+  color: #ffffff; /* 흰색 글자 */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2); /* 더 강한 그림자 */
+}
+
+/* 버튼 호버 효과 */
+[id^="change-btn-"]:hover,#save-btn:hover{
+  background-color: #C66E3F; /* 더 진한 오렌지 베이지 */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* 강조된 그림자 */
+  transform: translateY(-3px); /* 위로 더 올라가는 효과 */
+}
+
+/* 버튼 클릭 효과 */
+[id^="change-btn-"]:active,#save-btn:active {
+  background-color: #A6552E; /* 가장 진한 오렌지 베이지 */
+  transform: translateY(1px); /* 클릭 시 약간 내려감 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 그림자 축소 */
+}
+
